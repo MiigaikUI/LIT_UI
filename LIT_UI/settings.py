@@ -2,13 +2,19 @@ import os
 import socket
 from pathlib import Path
 
+
+def get_ip_address():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    return s.getsockname()[0]
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-1de$h^ys3p9wu#sru01gatlv^t1b7bl(1y0srkhn+5r&l)1eo9'
-
 DEBUG = True
 
-IP = socket.gethostbyname(socket.gethostname())
+IP = get_ip_address()
 ALLOWED_HOSTS = [IP, '127.0.0.1', 'localhost', '0.0.0.0']
 print(IP)
 INSTALLED_APPS = [
