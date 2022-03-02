@@ -14,9 +14,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1de$h^ys3p9wu#sru01gatlv^t1b7bl(1y0srkhn+5r&l)1eo9'
 DEBUG = True
 
-IP = get_ip_address()
-ALLOWED_HOSTS = [IP, '127.0.0.1', 'localhost', '0.0.0.0']
-print(IP)
+ALLOWED_HOSTS = [get_ip_address(), '127.0.0.1', 'localhost', '0.0.0.0']
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
