@@ -5,23 +5,14 @@
     <title>Clock</title>
     <script>
         function digitalClock() {
-            Object.defineProperty(
-                Object.prototype,
-                'randElement',
-                {
-                    value: function () {
-                        var rand = Math.floor(Math.random() * this.length);
-                        return this[rand];
-                    }
-                }
-            );
-            var arr = ['ХУЙ', 'ПИЗДА', 'ЗАЛУПА', 'ЧЁРТ', 'ЕБЛО', 'МУДИЛА', 'МИИГАиК'];
             var date = new Date();
             var hours = date.getHours();
             var minutes = date.getMinutes();
             var seconds = date.getSeconds();
+            let arr =  ['ХУЙ', 'ПИЗДА', 'ЗАЛУПА', 'ЧЁРТ', 'ЕБЛО', 'МУДИЛА', 'МИИГАиК'];
+
             if (seconds % 10 == 0 || seconds == 0) {
-                document.getElementById("id_clock").innerHTML = arr.randElement();
+                document.getElementById("id_clock").innerHTML =arr[Math.floor(Math.random()*arr.length)];
             } else {
                 if (hours >= 13 && hours <= 14) {
                     document.getElementById("id_clock").innerHTML = "ОБЕД!";
