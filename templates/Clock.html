@@ -14,11 +14,9 @@
             if (seconds < 10) seconds = "0" + seconds;
             if (hours >= 13 && hours <= 14) {
                 document.getElementById("id_clock").innerHTML = "ОБЕД!";
-            }
-            else if (hours <= 9 && hours >=18) {
+            } else if (hours <= 9 && hours >= 18) {
                 document.getElementById("id_clock").innerHTML = "ДОМОЙ!";
-            }
-            else {
+            } else {
                 document.getElementById("id_clock").innerHTML = hours + ":" + minutes + ":" + seconds;
             }
             setTimeout("digitalClock()", 1000);
