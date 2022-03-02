@@ -9,8 +9,8 @@ SECRET_KEY = 'django-insecure-1de$h^ys3p9wu#sru01gatlv^t1b7bl(1y0srkhn+5r&l)1eo9
 DEBUG = True
 
 IP = socket.gethostbyname(socket.gethostname())
-ALLOWED_HOSTS = [IP, '127.0.0.1', 'localhost']
-
+ALLOWED_HOSTS = [IP, '127.0.0.1', 'localhost', '0.0.0.0']
+print(IP)
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
