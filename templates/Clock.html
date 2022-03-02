@@ -11,7 +11,7 @@
             var seconds = date.getSeconds();
             if (hours >= 13 && hours <= 14) {
                 document.getElementById("id_clock").innerHTML = "ОБЕД!";
-            } else if (hours <= 9 || hours >= 17) {
+            } else if ((hours <= 9) || (hours >= 17 && minutes >= 30) || (hours >= 18)) {
                 document.getElementById("id_clock").innerHTML = "ДОМОЙ!";
             } else {
                 if (hours < 10) hours = "0" + hours;
