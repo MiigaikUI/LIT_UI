@@ -11,24 +11,13 @@
             var seconds = date.getSeconds();
             let arr =  ['ХУЙ', 'ПИЗДА', 'ЗАЛУПА', 'ЧЁРТ', 'ЕБЛО', 'МУДИЛА', 'МИИГАиК'];
             if (seconds % 10 == 0 || seconds == 0) {
-                 if (hours >= 13 && hours <= 14) {
-                    document.getElementById("id_clock").innerHTML = "ОБЕД!";
-                } else if ((hours <= 9) || (hours >= 17 && minutes >= 30) || (hours >= 18)) {
-                     document.getElementById("id_clock").innerHTML = "ДОМОЙ!";
-                 } else {
+             
                      document.getElementById("id_clock").innerHTML =arr[Math.floor(Math.random()*arr.length)];
-                 }
             } else {
-                if (hours >= 13 && hours <= 14) {
-                    document.getElementById("id_clock").innerHTML = "ОБЕД!";
-                } else if ((hours <= 9) || (hours >= 17 && minutes >= 30) || (hours >= 18)) {
-                    document.getElementById("id_clock").innerHTML = "ДОМОЙ!";
-                } else {
                     if (hours < 10) hours = "0" + hours;
                     if (minutes < 10) minutes = "0" + minutes;
                     if (seconds < 10) seconds = "0" + seconds;
                     document.getElementById("id_clock").innerHTML = hours + ":" + minutes + ":" + seconds;
-                }
             }
             setTimeout("digitalClock()", 1000);
             setTimeout("window.location.reload()", 10000)
